@@ -18,11 +18,12 @@
               </div>
             </div>
 
-            <div class="col-md-1 mb-3">
+            <div class="col-12 mb-3">
               <label class="col-form-label m-r-10">Active</label>
               <div class="media-body text-start icon-state">
-                <label class="switch"> <input type="checkbox" checked="" /><span class="switch-state"></span> </label>
-              </div>
+                <label class="switch">
+                  <input type="checkbox" [checked]="checked" (change)="checked = !checked" /><span class="switch-state" [ngClass]="{ 'bg-success': checked, 'bg-danger': !checked }"></span>
+                </label>              </div>
             </div>
 
             <div class="col-12">

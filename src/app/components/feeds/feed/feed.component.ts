@@ -12,6 +12,8 @@ export class FeedComponent implements OnInit {
   id: string;
   type: "view" | "edit";
 
+  checked = true;
+
   public ClassicEditor = ClassicEditor;
   public files: File[] = [];
 
