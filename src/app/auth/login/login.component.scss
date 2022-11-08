@@ -12,6 +12,16 @@
   animation-iteration-count: infinite;
 }
 
+.logo-container {
+  margin-bottom: 3rem;
+  text-align: center;
+
+  & img {
+    height: 3rem;
+    width: auto;
+  }
+}
+
 @keyframes loader {
   15% {
     transform: translateX(0);
