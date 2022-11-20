@@ -34,6 +34,10 @@ export const content: Routes = [
     loadChildren: () => import("../../components/feeds/feeds.module").then((m) => m.FeedsModule),
   },
   {
+    path: "advertisments",
+    loadChildren: () => import("../../components/advertisments/advertisments.module").then((m) => m.AdvertismentsModule),
+  },
+  {
     path: "transactions",
     loadChildren: () => import("../../components/transactions/transactions.module").then((m) => m.TransactionsModule),
   },
