@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2, ElementRef } from "@angular/core";
 import { DragulaService } from "ng2-dragula";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-advertisment",
@@ -8,6 +9,8 @@ import { DragulaService } from "ng2-dragula";
 })
 export class AdvertismentComponent implements OnInit {
   checked = true;
+
+  subs = new Subscription();
 
   adSequence = "adSequence";
   data = [
@@ -192,5 +195,9 @@ export class AdvertismentComponent implements OnInit {
         console.log(event);
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.dragulaService.destroy("adSequence");
   }
 }
