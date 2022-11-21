@@ -12,169 +12,39 @@ export class AdvertismentComponent implements OnInit {
 
   subs = new Subscription();
 
+  files: File[] = [];
+
   adSequence = "adSequence";
   data = [
     {
       id: 1,
       url: "assets/images/lightgallry/01.jpg",
-      html: `
-      <div class="card">
-        <div class="card-body pb-0">
-          <div class="ribbon ribbon-clip ribbon-secondary">1</div>
-          <div class="row">
-            <div class="col-12">
-              <img src="assets/images/lightgallry/01.jpg" alt="Banner" class="w-100 handle" />
-            </div>
-            <div class="col-12 col-md-1 d-flex align-items-center">
-              <label class="col-form-label m-r-10">Active</label>
-              <div class="media-body text-start icon-state">
-                <label class="switch m-0">
-                  <input type="checkbox" [checked]="checked" (change)="checked = !checked" /><span class="switch-state" [ngClass]="{ 'bg-success': checked, 'bg-danger': !checked }"></span>
-                </label>
-              </div>
-            </div>
-            <div class="col-12 col-md-1 offset-md-9 d-flex">
-              <span class="text-danger f-32 delete"><i class="icofont icofont-bin delete" id="1"></i></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      `,
+      active: true,
     },
     {
       id: 2,
       url: "assets/images/lightgallry/01.jpg",
-      html: `
-      <div class="card">
-        <div class="card-body pb-0">
-          <div class="ribbon ribbon-clip ribbon-secondary">2</div>
-          <div class="row">
-            <div class="col-12 ">
-              <img src="assets/images/lightgallry/02.jpg" alt="Banner" class="w-100 handle" />
-            </div>
-            <div class="col-md-1 d-flex align-items-center">
-              <label class="col-form-label m-r-10">Active</label>
-              <div class="media-body text-start icon-state">
-                <label class="switch m-0">
-                  <input type="checkbox" [checked]="checked" (change)="checked = !checked" /><span class="switch-state" [ngClass]="{ 'bg-success': checked, 'bg-danger': !checked }"></span>
-                </label>
-              </div>
-            </div>
-            <div class="col-md-1 offset-9 d-flex">
-              <span class="text-danger f-32 delete"><i class="icofont icofont-bin delete" id="2"></i></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      `,
+      active: true,
     },
     {
       id: 3,
       url: "assets/images/lightgallry/01.jpg",
-      html: `
-      <div class="card">
-        <div class="card-body pb-0">
-          <div class="ribbon ribbon-clip ribbon-secondary">3</div>
-          <div class="row">
-            <div class="col-12">
-              <img src="assets/images/lightgallry/01.jpg" alt="Banner" class="w-100 handle" />
-            </div>
-            <div class="col-md-1 d-flex align-items-center">
-              <label class="col-form-label m-r-10">Active</label>
-              <div class="media-body text-start icon-state">
-                <label class="switch m-0">
-                  <input type="checkbox" [checked]="checked" (change)="checked = !checked" /><span class="switch-state" [ngClass]="{ 'bg-success': checked, 'bg-danger': !checked }"></span>
-                </label>
-              </div>
-            </div>
-            <div class="col-md-1 offset-9 d-flex">
-              <span class="text-danger f-32 delete"><i class="icofont icofont-bin delete" id="3"></i></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      `,
+      active: true,
     },
     {
       id: 4,
       url: "assets/images/lightgallry/01.jpg",
-      html: `
-      <div class="card">
-        <div class="card-body pb-0">
-          <div class="ribbon ribbon-clip ribbon-secondary">4</div>
-          <div class="row">
-            <div class="col-12">
-              <img src="assets/images/lightgallry/01.jpg" alt="Banner" class="w-100 handle" />
-            </div>
-            <div class="col-md-1 d-flex align-items-center">
-              <label class="col-form-label m-r-10">Active</label>
-              <div class="media-body text-start icon-state">
-                <label class="switch m-0">
-                  <input type="checkbox" [checked]="checked" (change)="checked = !checked" /><span class="switch-state" [ngClass]="{ 'bg-success': checked, 'bg-danger': !checked }"></span>
-                </label>
-              </div>
-            </div>
-            <div class="col-md-1 offset-9 d-flex">
-              <span class="text-danger f-32 delete"><i class="icofont icofont-bin delete" id="4"></i></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      `,
+      active: true,
     },
     {
       id: 5,
       url: "assets/images/lightgallry/01.jpg",
-      html: `
-      <div class="card">
-        <div class="card-body pb-0">
-          <div class="ribbon ribbon-clip ribbon-secondary">5</div>
-          <div class="row">
-            <div class="col-12">
-              <img src="assets/images/lightgallry/01.jpg" alt="Banner" class="w-100 handle" />
-            </div>
-            <div class="col-md-1 d-flex align-items-center">
-              <label class="col-form-label m-r-10">Active</label>
-              <div class="media-body text-start icon-state">
-                <label class="switch m-0">
-                  <input type="checkbox" [checked]="checked" (change)="checked = !checked" /><span class="switch-state" [ngClass]="{ 'bg-success': checked, 'bg-danger': !checked }"></span>
-                </label>
-              </div>
-            </div>
-            <div class="col-md-1 offset-9 d-flex">
-              <span class="text-danger f-32 delete"><i class="icofont icofont-bin delete" id="5"></i></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      `,
+      active: true,
     },
     {
       id: 6,
       url: "assets/images/lightgallry/01.jpg",
-      html: `
-      <div class="card">
-        <div class="card-body pb-0">
-          <div class="ribbon ribbon-clip ribbon-secondary">6</div>
-          <div class="row">
-            <div class="col-12 handle">
-              <img src="assets/images/lightgallry/01.jpg" alt="Banner" class="w-100 handle" />
-            </div>
-            <div class="col-md-1 d-flex align-items-center">
-              <label class="col-form-label m-r-10">Active</label>
-              <div class="media-body text-start icon-state">
-                <label class="switch m-0">
-                  <input type="checkbox" [checked]="checked" (change)="checked = !checked" /><span class="switch-state" [ngClass]="{ 'bg-success': checked, 'bg-danger': !checked }"></span>
-                </label>
-              </div>
-            </div>
-            <div class="col-md-1 offset-9 d-flex">
-              <span class="text-danger f-32 delete"><i class="icofont icofont-bin delete" id="6"></i></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      `,
+      active: true,
     },
   ];
 
@@ -195,6 +65,21 @@ export class AdvertismentComponent implements OnInit {
         console.log(event);
       }
     });
+  }
+
+  onSelect(event) {
+    this.files.push(...event.addedFiles);
+    if (this.files.length > 1) {
+      this.replaceFile();
+    }
+  }
+
+  replaceFile() {
+    this.files.splice(0, 1);
+  }
+
+  onRemove(event) {
+    this.files.splice(this.files.indexOf(event), 1);
   }
 
   ngOnDestroy() {
