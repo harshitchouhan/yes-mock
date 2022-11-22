@@ -1,0 +1,31 @@
+.home {
+  &-banner {
+    height: 20rem;
+    border: 2px solid red;
+    border-top: none;
+  }
+
+  &-upcoming-exams {
+    height: 10rem;
+    border: 2px solid red;
+    border-top: none;
+  }
+
+  &-exams-category {
+    height: 40rem;
+    border: 2px solid red;
+    border-top: none;
+  }
+
+  &-features {
+    height: 30rem;
+    border: 2px solid red;
+    border-top: none;
+  }
+
+  &-testimonials {
+    height: 30rem;
+    border: 2px solid red;
+    border-top: none;
+  }
+}

@@ -7,6 +7,7 @@ import { full } from "./shared/routes/full.routes";
 import { content } from "./shared/routes/routes";
 
 import { AdminGuard } from "./shared/guard/admin.guard";
+import { HomeComponent } from "./pages/home/home.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "student/login",
     component: LoginComponent,
+  },
+  {
+    path: "home",
+    component: HomeComponent,
   },
   {
     path: "",
