@@ -37,6 +37,42 @@ export class HomeComponent implements OnInit {
     prevArrow: `<button type="button" class="slick-prev">Previous</button>`,
     nextArrow: `<button type="button" class="slick-next">Next</button>`,
     infinite: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 8,
+          slidesToScroll: 5,
+        },
+      },
+      {
+        breakpoint: 786,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 3,
+          arrows: false,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          arrows: false,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 300,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+        },
+      },
+    ],
   };
 
   constructor(config: NgbCarouselConfig) {
