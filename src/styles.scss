@@ -67,3 +67,8 @@ th[sortable].desc:before {
 .handle {
   cursor: pointer;
 }
+
+.slick-prev:before,
+.slick-next:before {
+  color: $primary-color;
+}

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   errorMessage: any;
 
-  pageType: "admin" | "student" = "admin";
+  pageType: "admin" | "student" = "student";
 
   constructor(private fb: FormBuilder, public authService: AuthService, private router: Router) {
     this.loginForm = this.fb.group({
@@ -24,10 +24,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.router.url.includes("student")) {
-      this.pageType = "student";
-    } else if (this.router.url.includes("auth")) {
+    if (this.router.url.includes("auth")) {
       this.pageType = "admin";
+    } else {
+      this.pageType = "student";
     }
   }
 
