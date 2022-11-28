@@ -37,7 +37,27 @@
 
   <div class="row home-exams-category">
     <div class="col-12">
-      <h1>Exams Category</h1>
+      <h3 class="m-b-20">Choose Your Exam</h3>
+
+      <div class="home-exams-category--container">
+        <ngx-slick-carousel
+          class="carousel"
+          #slickModal="slick-carousel"
+          [config]="categorySlideConfig"
+          (init)="slickInit($event)"
+          (breakpoint)="breakpoint($event)"
+          (afterChange)="afterChange($event)"
+          (beforeChange)="beforeChange($event)"
+        >
+          <div ngxSlickItem *ngFor="let slide of categorySlides; let i = index" class="slide">
+            <button class="btn" [ngClass]="{ 'btn-primary': slide.isActive, 'btn-outline-primary': !slide.isActive }" [id]="'btn-' + i" (click)="onCategoryFilterChange(slide)">
+              {{ slide.name }}
+            </button>
+          </div>
+        </ngx-slick-carousel>
+
+        <div class="home-exams-category--exams"></div>
+      </div>
     </div>
   </div>
 

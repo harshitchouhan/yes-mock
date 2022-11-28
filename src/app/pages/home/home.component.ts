@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
 import { NgbCarouselConfig } from "@ng-bootstrap/ng-bootstrap";
 @Component({
   selector: "app-home",
@@ -27,6 +28,7 @@ export class HomeComponent implements OnInit {
     { img: "assets/images/slider/1.jpg", name: "SSC CHSL" },
     { img: "assets/images/slider/1.jpg", name: "UPSC CSE" },
   ];
+
   slideConfig = {
     slidesToShow: 10,
     slidesToScroll: 5,
@@ -75,6 +77,75 @@ export class HomeComponent implements OnInit {
     ],
   };
 
+  categorySlides = [
+    { content: "", name: "Bannking & Insurance", isActive: true },
+    { content: "", name: "SSC Exams", isActive: false },
+    { content: "", name: "Regulatory", isActive: false },
+    { content: "", name: "UPSC", isActive: false },
+    { content: "", name: "MBA Exams", isActive: false },
+    { content: "", name: "Railway Exams", isActive: false },
+    { content: "", name: "JAIIB-CAIIB Exams", isActive: false },
+    { content: "", name: "Karnataka Exams", isActive: false },
+    { content: "", name: "Tamil Nadu Exams", isActive: false },
+    { content: "", name: "Judiciary Exams", isActive: false },
+    { content: "", name: "Law Entrance Exams", isActive: false },
+    { content: "", name: "Agriculture Exams", isActive: false },
+    { content: "", name: "Engineering Exams", isActive: false },
+    { content: "", name: "J&K Exams", isActive: false },
+    { content: "", name: "UP Exams", isActive: false },
+    { content: "", name: "Rajasthan Exams", isActive: false },
+  ];
+
+  categorySlideConfig = {
+    slidesToShow: 8,
+    slidesToScroll: 5,
+    dots: false,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    arrows: true,
+    prevArrow: `<button type="button" class="slick-prev">Previous</button>`,
+    nextArrow: `<button type="button" class="slick-next">Next</button>`,
+    infinite: false,
+    adaptiveHeight: true,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 786,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 2,
+          arrows: false,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          arrows: false,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 300,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+        },
+      },
+    ],
+  };
+
   constructor(config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree
     config.showNavigationArrows = false;
@@ -92,8 +163,14 @@ export class HomeComponent implements OnInit {
     this.slides.length = this.slides.length - 1;
   }
 
-  slickInit(e) {
-    console.log("slick initialized");
+  slickInit(e) {}
+
+  onCategoryFilterChange(slide: any) {
+    this.categorySlides.forEach((element) => {
+      element.isActive = false;
+    });
+
+    slide.isActive = true;
   }
 
   breakpoint(e) {

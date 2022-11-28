@@ -36,9 +36,13 @@
   }
 
   &-exams-category {
-    height: 40rem;
-    border: 2px solid red;
-    border-top: none;
+    padding: 1.5rem 0;
+
+    &--container {
+    }
+
+    &--exams {
+    }
   }
 
   &-features {
