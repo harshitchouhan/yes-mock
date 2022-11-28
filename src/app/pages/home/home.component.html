@@ -56,7 +56,20 @@
           </div>
         </ngx-slick-carousel>
 
-        <div class="home-exams-category--exams"></div>
+        <div class="home-exams-category--exams" *ngIf="selectedCategoryExams.length > 0">
+          <div class="home-exams-category--exams-container" *ngFor="let exam of selectedCategoryExams; let i = index">
+            <div class="home-exams-category--exams-card">
+              <div class="home-exams-category--exams-container--img">
+                <img src="assets/images/slider/1.jpg" alt="Exam Image" />
+              </div>
+              <p class="m-0 f-w-400">{{ exam.name }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-exams-category--noexams" *ngIf="selectedCategoryExams.length === 0">
+          <h4>No exam available in this category</h4>
+        </div>
       </div>
     </div>
   </div>

@@ -78,22 +78,63 @@ export class HomeComponent implements OnInit {
   };
 
   categorySlides = [
-    { content: "", name: "Bannking & Insurance", isActive: true },
-    { content: "", name: "SSC Exams", isActive: false },
-    { content: "", name: "Regulatory", isActive: false },
-    { content: "", name: "UPSC", isActive: false },
-    { content: "", name: "MBA Exams", isActive: false },
-    { content: "", name: "Railway Exams", isActive: false },
-    { content: "", name: "JAIIB-CAIIB Exams", isActive: false },
-    { content: "", name: "Karnataka Exams", isActive: false },
-    { content: "", name: "Tamil Nadu Exams", isActive: false },
-    { content: "", name: "Judiciary Exams", isActive: false },
-    { content: "", name: "Law Entrance Exams", isActive: false },
-    { content: "", name: "Agriculture Exams", isActive: false },
-    { content: "", name: "Engineering Exams", isActive: false },
-    { content: "", name: "J&K Exams", isActive: false },
-    { content: "", name: "UP Exams", isActive: false },
-    { content: "", name: "Rajasthan Exams", isActive: false },
+    {
+      content: [
+        { name: "SBI PO", icon: "", id: "1" },
+        { name: "SBI Apprentice", icon: "", id: "2" },
+        { name: "SBI Clerk ", icon: "", id: "3" },
+        { name: "RBI Assistant ", icon: "", id: "4" },
+        { name: "SBI PO", icon: "", id: "1" },
+        { name: "SBI Apprentice", icon: "", id: "2" },
+        { name: "SBI Clerk ", icon: "", id: "3" },
+        { name: "RBI Assistant ", icon: "", id: "4" },
+        { name: "SBI PO", icon: "", id: "1" },
+        { name: "SBI Apprentice", icon: "", id: "2" },
+        { name: "SBI Clerk ", icon: "", id: "3" },
+        { name: "RBI Assistant ", icon: "", id: "4" },
+        { name: "SBI PO", icon: "", id: "1" },
+        { name: "SBI Apprentice", icon: "", id: "2" },
+        { name: "SBI Clerk ", icon: "", id: "3" },
+        { name: "RBI Assistant ", icon: "", id: "4" },
+        { name: "SBI PO", icon: "", id: "1" },
+        { name: "SBI Apprentice", icon: "", id: "2" },
+        { name: "SBI Clerk ", icon: "", id: "3" },
+        { name: "RBI Assistant ", icon: "", id: "4" },
+        { name: "SBI PO", icon: "", id: "1" },
+        { name: "SBI Apprentice", icon: "", id: "2" },
+        { name: "SBI Clerk ", icon: "", id: "3" },
+        { name: "RBI Assistant ", icon: "", id: "4" },
+        { name: "SBI PO", icon: "", id: "1" },
+        { name: "SBI Apprentice", icon: "", id: "2" },
+        { name: "SBI Clerk ", icon: "", id: "3" },
+        { name: "RBI Assistant ", icon: "", id: "4" },
+      ],
+      name: "Bannking & Insurance",
+      isActive: true,
+    },
+    {
+      content: [
+        { name: "SSC CGL", icon: "", id: "5" },
+        { name: "SSC CHSL", icon: "", id: "6" },
+        { name: "SSC CPO", icon: "", id: "7" },
+      ],
+      name: "SSC Exams",
+      isActive: false,
+    },
+    { content: [], name: "Regulatory", isActive: false },
+    { content: [], name: "UPSC", isActive: false },
+    { content: [], name: "MBA Exams", isActive: false },
+    { content: [], name: "Railway Exams", isActive: false },
+    { content: [], name: "JAIIB-CAIIB Exams", isActive: false },
+    { content: [], name: "Karnataka Exams", isActive: false },
+    { content: [], name: "Tamil Nadu Exams", isActive: false },
+    { content: [], name: "Judiciary Exams", isActive: false },
+    { content: [], name: "Law Entrance Exams", isActive: false },
+    { content: [], name: "Agriculture Exams", isActive: false },
+    { content: [], name: "Engineering Exams", isActive: false },
+    { content: [], name: "J&K Exams", isActive: false },
+    { content: [], name: "UP Exams", isActive: false },
+    { content: [], name: "Rajasthan Exams", isActive: false },
   ];
 
   categorySlideConfig = {
@@ -146,6 +187,8 @@ export class HomeComponent implements OnInit {
     ],
   };
 
+  selectedCategoryExams = this.categorySlides[0].content;
+
   constructor(config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree
     config.showNavigationArrows = false;
@@ -171,6 +214,7 @@ export class HomeComponent implements OnInit {
     });
 
     slide.isActive = true;
+    this.selectedCategoryExams = slide.content;
   }
 
   breakpoint(e) {
