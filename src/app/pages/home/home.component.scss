@@ -10,6 +10,8 @@
   }
 
   &-upcoming-exams {
+    padding: 1.5rem 0 2.5rem;
+
     &--img-container {
       height: 5rem;
       width: 5rem;
@@ -36,7 +38,7 @@
   }
 
   &-exams-category {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 2.5rem;
 
     &--container {
     }
@@ -92,20 +94,41 @@
   }
 
   &-features {
-    height: 30rem;
-    border: 2px solid red;
-    border-top: none;
+    padding: 1.5rem 0 2.5rem;
+
+    &--box {
+      background-color: #fafbff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    & .icon-container {
+      height: 6rem;
+      width: 6rem;
+      margin: 0 auto;
+      background: #01093d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+
+      & .icofont {
+        font-size: 4rem;
+        color: white;
+      }
+    }
   }
 
   &-packages {
-    height: 30rem;
-    border: 2px solid red;
-    border-top: none;
+    padding: 1.5rem 0 2.5rem;
+
+    & .pricingtable {
+      z-index: unset;
+    }
   }
 
   &-posts {
-    height: 35rem;
-    border: 2px solid red;
-    border-top: none;
+    padding: 1.5rem 0 2.5rem;
   }
 }

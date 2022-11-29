@@ -109,7 +109,7 @@ export class HomeComponent implements OnInit {
         { name: "SBI Clerk ", icon: "", id: "3" },
         { name: "RBI Assistant ", icon: "", id: "4" },
       ],
-      name: "Bannking & Insurance",
+      name: "Banking & Insurance",
       isActive: true,
     },
     {
